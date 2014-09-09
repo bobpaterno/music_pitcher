@@ -1,20 +1,20 @@
-# Admin logs into website
-As an admin
+# User logs into website
+As an user
 In order to keep my activity proprietary
 I want to securely log in
 
 Usage
-* User visits admin site login page
+* User visits user site login page
 * User enters username and password
 * User logs into secure website
 
 Acceptance Criteria
 * Invalid username and password are rejected
-* Admin page URLs are not accessible unless logged in
+* user page URLs are not accessible unless logged in
 
 
-# Admin selects from menu options
-As an admin
+# User selects from menu options
+As an user
 In order to navigate to pitch or add songs
 I want to see a menu with those options
 
@@ -30,8 +30,8 @@ Acceptance Criteria
 * List song option leads to the List Song index page
 
 
-# Admin goes to Pitch Song page
-As an admin
+# User goes to Pitch Song page
+As an user
 In order to create a dynamically generated song list
 I want to fill out a form on the Pitch Song page
 
