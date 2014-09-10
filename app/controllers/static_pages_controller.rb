@@ -6,4 +6,8 @@ class StaticPagesController < ApplicationController
       redirect_to menu_path
     end
   end
+
+  def menu
+    render :menu
+  end
 end

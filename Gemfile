@@ -16,13 +16,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'spring',        group: :development
 
 group :development, :test do
+  gem 'fabrication'
   gem 'rspec-rails'
   gem 'letter_opener'
 end
 
 group :test do
   gem 'capybara'
-  gem 'fabrication'
   gem 'launchy'
   gem 'shoulda'
 end

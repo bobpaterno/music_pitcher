@@ -1,4 +1,8 @@
 feature "Login page" do
+  background do
+    Fabricate(:user, username: "user1")
+  end
+
   scenario "user sees login page" do
     visit "/"
     click_on "Login"
@@ -9,17 +13,41 @@ feature "Login page" do
   end
 
   scenario "user logs in with correct credentials" do
+    visit new_user_session_path
+    fill_in "Username", with: "user1"
+    fill_in "Password", with: "password1"
+    click_button "Login"
+    expect(page).to have_content("Welcome back, user1")
   end
 
-  scenario "user logs in with incorrect credentials" do
+  scenario "user logs in with incorrect username" do
+    visit new_user_session_path
+    fill_in "Username", with: "user2"
+    fill_in "Password", with: "password1"
+    click_button "Login"
+    expect(page).to have_content("We could not sign you in. Please check your sign in information below.")
+  end
+
+  scenario "user logs in with incorrect password" do
+    visit new_user_session_path
+    fill_in "Username", with: "user1"
+    fill_in "Password", with: "wrong"
+    click_button "Login"
+    expect(page).to have_content("We could not sign you in. Please check your sign in information below.")
   end
 
   scenario "user leaves Username blank" do
+    visit new_user_session_path
+    fill_in "Password", with: "wrong"
+    click_button "Login"
+    expect(page).to have_content("We could not sign you in. Please check your sign in information below.")
   end
 
   scenario "user leaves Password blank" do
+    visit new_user_session_path
+    fill_in "Username", with: "user1"
+    click_button "Login"
+    expect(page).to have_content("We could not sign you in. Please check your sign in information below.")
   end
 
-  scenario "user leaves Username and Password blank" do
-  end
 end

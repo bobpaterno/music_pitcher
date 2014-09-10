@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#welcome'
+  get 'menu' => 'static_pages#menu'
   resource :user_session, only: [:new, :create]
 
   # Example of regular route:
