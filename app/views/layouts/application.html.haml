@@ -11,7 +11,7 @@
   %body
     %nav#main
       %ul
-        %li= link_to "Login", root_path
+        %li= link_to "Login", new_user_session_path
     %main
       - if notice.present?
         .alert-box.success{ "data-alert" => "" }
