@@ -1,5 +1,5 @@
 # User logs into website
-As an user
+As a user
 In order to keep my activity proprietary
 I want to securely log in
 
@@ -14,7 +14,7 @@ Acceptance Criteria
 
 
 # User selects from menu options
-As an user
+As a user
 In order to navigate to pitch or add songs
 I want to see a menu with those options
 
@@ -31,7 +31,7 @@ Acceptance Criteria
 
 
 # User goes to Pitch Song page
-As an user
+As a user
 In order to create a dynamically generated song list
 I want to fill out a form on the Pitch Song page
 
