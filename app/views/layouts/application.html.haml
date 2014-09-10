@@ -1,0 +1,28 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Music Pitcher"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    %nav#main
+      %ul
+        %li= link_to "Login", root_path
+    %main
+      - if notice.present?
+        .alert-box.success{ "data-alert" => "" }
+          = notice
+          %a.close{ href: "#" } &times;
+      - if alert.present?
+        .alert-box.alert{ "data-alert" => "" }
+          = alert
+          %a.close{ href: "#" } &times;
+    = yield
+
+  %footer
+    = javascript_include_tag "application"
+    = javascript_tag '$.fx.off = true;' if Rails.env.test?
