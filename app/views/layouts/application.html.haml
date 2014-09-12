@@ -3,12 +3,14 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', :name => 'viewport' }/
-    = content_for?(:title) ? yield(:title) : "Music Pitcher"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body
+  %body.skin-blue
+    - if logged_in?
+      = render :partial => "layouts/header"
+
     %nav#main
       %ul
         - if logged_in?

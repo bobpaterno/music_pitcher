@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def menu
+    @user = current_user
     render :menu
   end
 end
