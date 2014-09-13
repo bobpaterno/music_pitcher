@@ -5,10 +5,9 @@ feature "Songs Index Page" do
   end
 
   scenario "user is logged in and visits songs index page" do
-    pending "Implementation"
     user = Fabricate(:user)
     login_as(user)
-    visit song_path
+    visit songs_path
     expect(page).to have_content("Song List")
     expect(page).to have_content("Create Song")
   end
