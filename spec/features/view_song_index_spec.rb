@@ -21,7 +21,7 @@ feature "Songs Index Page" do
     visit songs_path
     expect(Song.count).to eq 2
     expect(page).to have_content("Song List")
-    expect(page).to have_content("Create Song")
+    expect(page).to have_button("Add Song")
     expect(page).to have_content("Title")
     expect(page).to have_content("Artist")
     expect(page).to have_content("Genre")

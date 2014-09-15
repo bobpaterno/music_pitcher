@@ -1,4 +1,4 @@
-= link_to "Create Songs", "#"
+= button_to("Add Song", new_song_path, method: :get)
 
 %table
   - if @songs.length == 0

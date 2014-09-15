@@ -3,6 +3,13 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def new
+    @song = Song.new
+  end
+
+  def edit
+  end
+
   def show
     @song = Song.find_by_id(params[:id])
     if @song.nil?
