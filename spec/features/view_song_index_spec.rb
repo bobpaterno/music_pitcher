@@ -7,7 +7,8 @@ feature "Songs Index Page" do
   scenario "there are no songs in the database" do
     user = Fabricate(:user)
     login_as(user)
-    visit songs_path
+    visit root_path
+    click_link "Songs"
     expect(Song.count).to eq 0
     expect(page).to have_content("There are no songs in the database")
   end
