@@ -18,6 +18,17 @@ class SongsController < ApplicationController
   end
 
   def edit
+    @song = Song.find_by_id(params[:id])
+  end
+
+  def update
+    @song = Song.find_by_id(params[:id])
+    if @song.update(song_params)
+      redirect_to songs_path
+    else
+      flash.now[:alert] = "Could not update song: #{@song.title}"
+      render :show
+    end
   end
 
   def show

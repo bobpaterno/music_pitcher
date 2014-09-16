@@ -14,8 +14,8 @@ feature "Songs Index Page" do
   end
 
   scenario "user is logged in and visits songs index page" do
-    Fabricate(:song)
-    Fabricate(:song)
+    Fabricate(:song, title: "Song0", artist: "Artist0", genre: "Genre0")
+    Fabricate(:song, title: "Song1", artist: "Artist1", genre: "Genre1")
     user = Fabricate(:user)
     login_as(user)
     visit songs_path
