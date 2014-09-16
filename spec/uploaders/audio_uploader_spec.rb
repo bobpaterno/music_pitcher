@@ -14,9 +14,4 @@ describe AudioUploader do
     @uploader.remove!
   end
 
-  context 'the thumbnail' do
-    it 'should scale down to 40x40' do
-      @uploader.thumb.should have_dimensions(40, 40)
-    end
-  end
 end

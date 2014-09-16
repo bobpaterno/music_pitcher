@@ -1,3 +1,5 @@
+require 'file_size_validator'
+
 class Song < ActiveRecord::Base
   mount_uploader :audiofile, AudioUploader
 
@@ -6,4 +8,5 @@ class Song < ActiveRecord::Base
   validates_presence_of :genre
   validates_presence_of :audiofile
   validates :description, length: { maximum: 200 }
+  validates :audiofile, :file_size => { :maximum => 50.megabytes.to_i }
 end
