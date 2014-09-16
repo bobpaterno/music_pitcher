@@ -76,7 +76,7 @@ Acceptance Criteria
 * Song file names must be unique
 * Files are stored according to artist name
 * MP3 file or WAV file are the only acceptible file formats
-* Song file size must not exceed 30MB
+* Song file size must not exceed 50MB
 * Image files are optional
 * Image files may be of type png, jpg, jpeg, or gif
 * Image files may not exceed 2MB
