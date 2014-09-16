@@ -6,4 +6,4 @@
 %p= @song.audiofile
 
 = button_to("Edit Song", edit_song_path(@song), method: :get)
-= button_to("Delete Song", @song, method: :destroy)
+= button_to("Delete Song", song_path(@song), method: :delete)

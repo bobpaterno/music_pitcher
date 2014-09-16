@@ -39,6 +39,13 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    song = Song.find(params[:id])
+    song.destroy!
+    flash.notice = "Deleted song"
+    redirect_to songs_path
+  end
+
   protected
   def song_params
     params.require(:song).permit(:title, :artist, :genre, :description, :audiofile)
