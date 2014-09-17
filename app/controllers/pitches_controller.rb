@@ -12,4 +12,11 @@ class PitchesController < ApplicationController
     end
   end
 
+  def destroy
+    pitch = Pitch.find(params[:id])
+    pitch.destroy!
+    flash.notice = "Deleted pitch"
+    redirect_to pitches_path
+  end
+
 end

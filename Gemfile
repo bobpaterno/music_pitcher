@@ -25,6 +25,7 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'pry-rails'
   gem 'shoulda'
 end
 

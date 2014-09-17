@@ -61,6 +61,21 @@ Acceptance Criteria
 * User sees link to delete pitch
 
 
+# User deletes a pitch from show page
+As a user
+In order to maintain a useful index of pitches
+I want to be able to delete pitches
+
+Usage
+* User navigates to pitch index
+* User clicks on pitch ID or "Details" of a specific pitch
+* User clicks "Delete" button
+
+Acceptance Criteria
+* User must be logged in
+* After "Delete" button is pressed, record is deleted
+
+
 # User goes to Pitches New page
 As a user
 In order to create a dynamically generated song list

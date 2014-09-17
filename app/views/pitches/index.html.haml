@@ -18,5 +18,4 @@
         %td= pitch.created_at.strftime("%m/%d/%y %I:%H %p")
         %td= pitch.listened_to
         %td= link_to "Details", pitch_path(pitch)
-        %td future delete
-        / %td= link_to "Delete", pitch_path(pitch), method: :delete
+        %td= link_to "Delete", pitch_path(pitch), method: :delete
