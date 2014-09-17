@@ -39,4 +39,14 @@ feature "pitch show page" do
     click_button "Back"
     expect(page.current_path).to eq pitches_path
   end
+
+    scenario "click delete button in show" do
+    @pitch1 = Fabricate(:pitch)
+    @pitch2 = Fabricate(:pitch, pitch_notes: "These are pitch notes")
+    login_as(@user)
+    visit pitches_path
+    click_on "Pitch ID: #{@pitch2.id}"
+    expect(page.has_button?("Delete")).to eq true
+  end
+
 end
