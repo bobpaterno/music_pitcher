@@ -115,7 +115,7 @@
         %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
           %i.glyphicon.glyphicon-user
           %span
-            = @user.username
+            = current_user.username
             %i.caret
         %ul.dropdown-menu
           / User image
