@@ -1,5 +1,5 @@
 class Pitch < ActiveRecord::Base
-  before_create :populate_default_values
+  after_validation :populate_default_values, on: :create
 
   validates_presence_of :pitch_to
   validates_presence_of :email

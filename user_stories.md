@@ -45,7 +45,23 @@ Acceptance Criteria
 * User sees Pitch Id, Pitch To, Sent On, and whether or not the pitch was opened (Listened To)
 
 
-# User goes to Pitches page
+# User goes to Pitches Show page
+As a user
+In order to see details and status regarding an existing pitch
+I want to see a show page for a given pitch
+
+Usage
+* User navigates to Pitch Index page
+* User clicks on "Details" or "Pitch ID: <id>"
+* User sees Pitch Show page
+
+Acceptance Criteria
+* User must be logged in
+* User sees pitch id, pitch_to, pitch_notes, email, subject, message, created_at, and listened_to fields
+* User sees link to delete pitch
+
+
+# User goes to Pitches New page
 As a user
 In order to create a dynamically generated song list
 I want to fill out a form on the Pitch Song page
