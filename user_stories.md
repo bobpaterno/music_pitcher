@@ -30,6 +30,21 @@ Acceptance Criteria
 * List song option leads to the List Song index page
 
 
+# User goes to Pitches Index page
+As a user
+In order to maintain my existing pitches and history
+I want to see an index of all pitches
+
+Usage
+* User navigates to Pitch Index page
+* User sees a summary of all pitches made
+
+Acceptance Criteria
+* User has the ability to see details of each entry
+* User has the ability to delete each entry
+* User sees Pitch Id, Pitch To, Sent On, and whether or not the pitch was opened (Listened To)
+
+
 # User goes to Pitches page
 As a user
 In order to create a dynamically generated song list
