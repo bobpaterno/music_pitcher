@@ -37,7 +37,6 @@ I want to fill out a form on the Pitch Song page
 
 Usage
 * User selects from a list of songs in a select box, or
-* User selects by clicking a song in the select box, or
 * User types the name of a song in a search above select box
 * User fills in email address of pitch-ee
 * User fills in contents of email subject and body
@@ -51,6 +50,7 @@ Acceptance Criteria
 * User must fill in something for the subject field
 * User must fill in something for the body field
 * User may optionally fill in the "notes about pitch" field
+* The order of the songs selected will be saved for future presentation
 * Database must save the time and date of the pitch
 * A record of the song list and corresponding notes/subject/body fields
 
