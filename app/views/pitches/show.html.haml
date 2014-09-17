@@ -1,0 +1,11 @@
+%h2= "Pitch ID: #{@pitch.id}"
+
+%p= "Pitched to: #{@pitch.pitch_to}"
+%p= @pitch.pitch_notes
+%p= @pitch.email
+%p= @pitch.subject
+%p= @pitch.message
+%p= @pitch.listened_to
+
+=button_to "Back", pitches_path, method: "get"
+=button_to "Delete", pitch_path(@pitch), method: "delete"

@@ -1,0 +1,15 @@
+= button_to("Add Song", new_song_path, method: :get)
+
+%table
+  - if @songs.length == 0
+    There are no songs in the database
+  - else
+    Song List
+    %th Title
+    %th Artist
+    %th Genre
+    - @songs.each do |song|
+      %tr
+        %td= link_to "#{song.title}", song_path(song)
+        %td= song.artist
+        %td= song.genre

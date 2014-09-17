@@ -1,0 +1,21 @@
+%h1 Pitches Index
+
+%table
+  - if @pitches.length == 0
+    No pitches exist, click 'Add' to create one
+  - else
+    Pitch List
+    %th Pitch ID
+    %th Sent To
+    %th Sent On
+    %th Listened To
+    %th 
+    %th
+    - @pitches.each do |pitch|
+      %tr
+        %td= link_to "Pitch ID: #{pitch.id}", pitch_path(pitch)
+        %td= pitch.pitch_to
+        %td= pitch.created_at.strftime("%m/%d/%y %I:%H %p")
+        %td= pitch.listened_to
+        %td= link_to "Details", pitch_path(pitch)
+        %td= link_to "Delete", pitch_path(pitch), method: :delete

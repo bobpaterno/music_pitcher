@@ -1,0 +1,8 @@
+%h1 Edit Song
+= simple_form_for @song do |f|
+  = f.input :title
+  = f.input :artist
+  = f.input :genre
+  = f.input :description
+  = f.input :audiofile
+  = f.submit "Update"

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'jbuilder', '~> 2.0'
@@ -24,6 +25,7 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'pry-rails'
   gem 'shoulda'
 end
 
