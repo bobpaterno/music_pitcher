@@ -14,32 +14,26 @@
         %li
         / Messages: style can be found in dropdown.less
 
-        %li.dropdown.notifications-menu
+        %li.dropdown.user.user-menu
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             %span
               %i.glyphicon.glyphicon-music
               Songs
             %span
           %ul.dropdown-menu
-            %li.header
-            %li
-              %ul.menu
-                %li.user-body
-                  %a{:href => songs_path }
-                    .col-sm-12.text-right
-                      All Songs
-                %li
-                  %a{:href => new_song_path }
-                    .col-sm-12.text-right
-                      Add Song
+            / %li.user-body
+            %li.user-footer
+              .pull-left
+                =button_to "All Songs", songs_path, method: "get"
+              .pull-right
+                =button_to "New Song", new_song_path, method: "get"
 
-        / Notifications: style can be found in dropdown.less
         %li.dropdown.user.user-menu
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             %i.glyphicon.glyphicon-envelope
             Pitches
           %ul.dropdown-menu
-            %li.user-body
+            / %li.user-body
             %li.user-footer
               .pull-left
                 =button_to "All Pitches", pitches_path, method: "get"
