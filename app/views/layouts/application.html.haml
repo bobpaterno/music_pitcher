@@ -4,30 +4,34 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', :name => 'viewport' }/
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body.skin-blue
     - if logged_in?
       = render :partial => "layouts/header"
 
-    %nav#main
-      %ul
-        - if logged_in?
-          %li= link_to "Logout", user_session_path, method: :delete
-        -else
-          %li= link_to "Login", new_user_session_path
     %main
-      - if notice.present?
-        .alert-box.success{ "data-alert" => "" }
-          = notice
-          %a.close{ href: "#" } &times;
-      - if alert.present?
-        .alert-box.alert{ "data-alert" => "" }
-          = alert
-          %a.close{ href: "#" } &times;
-    = yield
+      .row
+        .col-sm-2
+        .col-sm-8
+          - if notice.present?
+            .alert.alert-info{ "data-alert" => "" }
+              = notice
+              %a.close{ href: "#" } &times;
+          - if alert.present?
+            .alert.alert-info{ "data-alert" => "" }
+              = alert
+              %a.close{ href: "#" } &times;
+        .col-sm-2
+        .container
+      .row
+        .col-md-1
+        .col-md-10
+          .wrapper.row-offcanvas.row-offcanvas-left
+            = yield
+
+        .col-md-1
 
   %footer
-    = javascript_include_tag "application"
-    = javascript_tag '$.fx.off = true;' if Rails.env.test?
+  = javascript_include_tag "application"
+  = javascript_tag '$.fx.off = true;' if Rails.env.test?

@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery-ui-1.10.3.min.js
+//= require bootstrap.min.js
+//= require AdminLTE/dashboard.js
+//= require AdminLTE/app.js
+//= require application.js

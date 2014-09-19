@@ -1,8 +1,35 @@
-%h1 New Song
-= simple_form_for @song do |f|
-  = f.input :title
-  = f.input :artist
-  = f.input :genre
-  = f.input :description
-  = f.input :audiofile
-  = f.submit "Create"
+.form-box
+  .box-header
+    .box-title
+      %h4
+        New Song
+  .box-body
+    = simple_form_for @song do |f|
+      .body.bg-gray
+        .form-group
+          = f.input :title, label: false, input_html: { class: 'form-control', placeholder: "Title", autofocus: "true" }
+        .form-group
+          = f.input :artist, label: false, input_html:  { class: 'form-control', placeholder: "Artist" }
+        .form-group
+          = f.input :genre, label: false, input_html:  { class: 'form-control', placeholder: "Genre" }
+        .form-group
+          = f.input :description, label: false, input_html:  { class: 'form-control', placeholder: "Description" }
+        .form-group
+          = f.input :audiofile, input_html:  { class: 'form-control' }
+        .footer
+          = f.button :submit, "Create", class: "btn btn-block"
+    .margin.text-center
+
+/ %content1.bg-black
+/   #login-box.form-box
+/     .header Sign In
+/     = simple_form_for @user, url: user_session_path, method: :post do |f|
+/       .body.bg-gray
+/         .form-group
+/           = f.input :username, input_html: { class: 'form-control', placeholder: "Username"}
+/         .form-group
+/           = f.input :password, input_html: { class: 'form-control', placeholder: "Password" }
+/         .footer
+/           = f.button :submit, "Login", class: "btn bg-olive btn-block"
+/     .margin.text-center
+/     %br
