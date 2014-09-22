@@ -180,7 +180,7 @@ img {
 .bg-purple,
 .bg-maroon,
 .bg-email {
-  background-color: rgba(76,106,127,0.3); !important;
+  background-color: rgba(76,106,127,0.3) !important;
   border-radius: 1em;
   margin-top: 1em;
 }

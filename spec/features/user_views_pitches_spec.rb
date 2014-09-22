@@ -32,10 +32,10 @@ feature "user views an index of pitches" do
     expect(page).to have_content(pitch1.pitch_to)
     expect(page).to have_content("Pitch ID: #{pitch1.id}")
     expect(page).to have_content(pitch1.created_at.strftime("%m/%d/%y %I:%H %p"))
-    expect(page).to have_content(pitch1.listened_to)
+    expect(page).to have_content("No") # should be no for the listened_to field
     expect(page).to have_content(pitch2.pitch_to)
     expect(page).to have_content("Pitch ID: #{pitch2.id}")
     expect(page).to have_content(pitch2.created_at.strftime("%m/%d/%y %I:%H %p"))
-    expect(page).to have_content(pitch2.listened_to)
+    expect(page).to have_content("No")
   end
 end

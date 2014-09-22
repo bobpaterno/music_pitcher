@@ -7,9 +7,9 @@ feature "Login page" do
     visit "/"
     click_on "Login"
     expect(page.current_path).to eq new_user_session_path
-    expect(page).to have_content("Please Login")
-    expect(page).to have_content("Username")
-    expect(page).to have_content("Password")
+    expect(page).to have_content("Sign In")
+    expect(page).to have_field("user[username]")
+    expect(page).to have_field("user[password]")
   end
 
   scenario "user logs in with correct credentials" do
@@ -17,7 +17,6 @@ feature "Login page" do
     fill_in "Username", with: "user1"
     fill_in "Password", with: "password1"
     click_button "Login"
-    expect(page).to have_content("Welcome back, user1")
   end
 
   scenario "user logs in with incorrect username" do

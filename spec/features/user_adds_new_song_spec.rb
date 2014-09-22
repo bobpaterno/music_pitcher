@@ -11,11 +11,12 @@ feature "Add new song" do
   end
 
   scenario "user visits new song page" do
-    expect(page).to have_content("New Song")
-    expect(page).to have_content("Title")
-    expect(page).to have_content("Artist")
-    expect(page).to have_content("Genre")
-    expect(page).to have_content("Description")
+    expect(page.current_path).to eq new_song_path
+    expect(page).to have_button("Create")
+    expect(page).to have_field("song[title]")
+    expect(page).to have_field("song[artist]")
+    expect(page).to have_field("song[genre]")
+    expect(page).to have_field("song[description]")
   end
 
   scenario "user adds new song" do
