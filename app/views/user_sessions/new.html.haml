@@ -1,13 +1,13 @@
 %content1.bg-black
-  #login-box.form-box
+  .form-box
     .header Sign In
     = simple_form_for @user, url: user_session_path, method: :post do |f|
-      .body.bg-gray
+      .body.bg-bluegray
         .form-group
           = f.input :username, label: false, input_html: { class: 'form-control', placeholder: "Username", autofocus: "true"}
         .form-group
           = f.input :password, label: false, input_html: { class: 'form-control', placeholder: "Password" }
         .footer
-          = f.button :submit, "Login", class: "btn bg-olive btn-block"
+          = f.button :submit, "Login", class: "btn btn-block btn-primary"
     .margin.text-center
     %br

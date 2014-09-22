@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:user][:username], params[:user][:password])
-      redirect_to menu_path, notice: "Welcome back, #{@user.username}!"
+      redirect_to menu_path
     else
       @user = User.new(params.require(:user).permit(:username, :password))
       @user.valid?

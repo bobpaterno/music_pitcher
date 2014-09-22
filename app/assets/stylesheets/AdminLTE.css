@@ -18,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
   /*background: #f9f9f9;*/
-  background-image: url('blueprints2.jpg');
+  background-image: url('music1.png');
   background-size: cover;
 }
 a {
@@ -179,11 +179,19 @@ img {
 .bg-fuchsia,
 .bg-purple,
 .bg-maroon,
+.bg-email {
+  background-color: rgba(76,106,127,0.3); !important;
+  border-radius: 1em;
+  margin-top: 1em;
+}
+.bg-bluegray {
+    background-color: rgba(76,106,127,0.6) !important;
+}
 .bg-black {
   color: #f9f9f9 !important;
 }
 .bg-gray {
-  background-color: #eaeaec !important;
+  background-color: rgba(204,204,216,0.69) !important;
 }
 .bg-black {
   background-color: #222222 !important;
@@ -319,7 +327,7 @@ img {
 /* Change the color of the striped tables */
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #f3f4f5;
+  background-color: rgba(153,211,255,0.2);
 }
 .table.no-border,
 .table.no-border td,
@@ -2411,7 +2419,7 @@ Component: timeline
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background: #3d9970;
+  background: #3070A0;
   box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.2);
   padding: 20px 10px;
   text-align: center;
