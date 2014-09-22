@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'figaro'
 gem 'haml'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -29,3 +30,6 @@ group :test do
   gem 'shoulda'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
