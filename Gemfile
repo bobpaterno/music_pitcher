@@ -29,3 +29,6 @@ group :test do
   gem 'shoulda'
 end
 
+group :production do
+  gem 'rails_12factor'
+end

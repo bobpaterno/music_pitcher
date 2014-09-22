@@ -4,6 +4,10 @@ class PitchesController < ApplicationController
     @pitches = Pitch.all
   end
 
+  def new
+    @pitch = Pitch.new
+  end
+
   def show
     @pitch = Pitch.find_by_id(params[:id])
     if @pitch.nil?
