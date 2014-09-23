@@ -1,10 +1,9 @@
 %header.header
   %a.logo{ :href => "/" } Music Pitcher
-  / = link_to "Music Pitcher", root_path
   / Header Navbar: style can be found in header.less
   %nav.navbar.navbar-static-top{:role => "navigation"}
     / Sidebar toggle button
-    %a.navbar-btn.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
+    %a.navbar-btn{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
       %span.sr-only Toggle navigation
       %span.icon-bar
       %span.icon-bar
@@ -22,11 +21,11 @@
             %span
           %ul.dropdown-menu
             / %li.user-body
-            %li.user-footer
-              .pull-left
-                =button_to "All Songs", songs_path, method: "get"
-              .pull-right
-                =button_to "New Song", new_song_path, method: "get"
+            %li
+              .margin.text-center
+                =button_to "All Songs", songs_path, method: "get", class: "btn btn-primary"
+              .margin.text-center
+                =button_to "New Song", new_song_path, method: "get", class: "btn btn-primary"
 
         %li.dropdown.user.user-menu
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -34,11 +33,11 @@
             Pitches
           %ul.dropdown-menu
             / %li.user-body
-            %li.user-footer
-              .pull-left
-                =button_to "All Pitches", pitches_path, method: "get"
-              .pull-right
-                =button_to "New Pitch", "#", method: "get"
+            %li
+              .margin.text-center
+                =button_to "All Pitches", pitches_path, method: "get", class: "btn btn-primary"
+              .margin.text-center
+                =button_to "New Pitch", "#", method: "get", class: "btn btn-primary"
 
 
         / User Account: style can be found in dropdown.less
@@ -50,13 +49,13 @@
               %i.caret
           %ul.dropdown-menu
             / Menu Body
-            %li.user-body
+            %li
               .col-xs-12.text-center
                 %p= "#{current_user.username}'s options"
             / Menu Footer
-            %li.user-footer
-              .pull-left
-                =button_to "Home", root_path, method: "get"
-              .pull-right
-                =button_to "Logout", user_session_path, method: "delete"
+            %li
+              .margin.text-center
+                =button_to "Home", root_path, method: "get", class: "btn btn-primary"
+              .margin.text-center
+                =button_to "Logout", user_session_path, method: "delete", class: "btn btn-primary"
 
