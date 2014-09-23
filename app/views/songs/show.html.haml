@@ -3,7 +3,6 @@
 %p= @song.artist
 %p= @song.genre
 %p= @song.description
-%p= @song.audiofile
 
 = button_to("Edit Song", edit_song_path(@song), method: :get)
 = button_to("Delete Song", song_path(@song), method: :delete)
