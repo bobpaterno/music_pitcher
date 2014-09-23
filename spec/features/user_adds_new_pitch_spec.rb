@@ -19,11 +19,13 @@ feature "user adds new pitch" do
   end
 
   scenario "songs autocomplete works" do
+    pending "implementation"
     visit new_pitch_path
     fill_in()
   end
 
   scenario "add one song and save successfully" do
+    pending "implementation"
     visit new_pitch_path
     fill_in("Foo", with: "Win")
     click "Winners"
