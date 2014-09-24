@@ -2,13 +2,16 @@
   .col-sm-2
   .col-sm-8
     %h1= "Pitch ID: #{@pitch.id}"
-    .row
+    .row.text-center
       .col-sm-4
-        %th Pitched To
+        %th
+          %h3 Pitched To
       .col-sm-4
-        %th Notes
+        %th
+          %h3 Notes
       .col-sm-4
-        %th Listened To
+        %th
+          %h3 Listened To
     .row
       .col-sm-4= @pitch.pitch_to
       .col-sm-4= @pitch.pitch_notes
@@ -31,5 +34,5 @@
   .col-sm-2
     =button_to "Back", pitches_path, method: "get", class: "btn btn-primary btn-block"
   .col-sm-2
-    =button_to "Delete", pitches_path(@pitch), method: :delete, class: "btn btn-danger btn-block"
+    =button_to "Delete", pitch_path(@pitch), method: :delete, class: "btn btn-danger btn-block"
   .col-sm-2
