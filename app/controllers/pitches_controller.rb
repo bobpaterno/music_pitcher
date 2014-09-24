@@ -36,10 +36,16 @@ class PitchesController < ApplicationController
   def song_select
     @pitch = Pitch.find_by_id(params[:id])
     @songs = Song.all
+    @song_selection = SongSelection.new
     if @pitch.nil?
       flash.notice = "Sorry, there seems to be a problem, please re-enter your pitch"
       render :new
     end
+  end
+
+  def choose_song
+    @pitch = Pitch.find_by_id(params[:id])
+    binding.pry
   end
 
   protected

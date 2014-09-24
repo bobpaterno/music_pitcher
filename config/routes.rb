@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :pitches do
     member do
       get 'song_select'
+      post 'choose_song'
     end
   end
+  resources :song_selections, only: [:new, :create]
   # get 'song_select_pitch', controller: 'pitches'
 
   # Example of regular route:
