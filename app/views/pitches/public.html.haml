@@ -1,0 +1,37 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', :name => 'viewport' }/
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+
+  %body.skin-blue
+    %header.header
+      %a.logo{ :href => "#" }= "Welcome"
+      %nav.navbar.navbar-static-top{:role => "navigation"}
+    .row
+      .col-sm-2
+      .col-sm-8
+        %h1 Please Listen
+        .row
+          .col-sm-12.table-responsive
+            %table.table.table-striped
+              Song List
+              %thead
+                %th Title
+                %th Artist
+                %th Genre
+                %th Play
+              %tbody
+                - @songs.each do |song|
+                  %tr
+                    %td= link_to "#{song.title}", song_path(song)
+                    %td= song.artist
+                    %td= song.genre
+                    %td
+                      %audio{controls: "true"}
+                        %source{ src: "#{song.audiofile}" }
+      .col-sm-2  %footer
+  = javascript_include_tag "application"
+  = javascript_tag '$.fx.off = true;' if Rails.env.test?

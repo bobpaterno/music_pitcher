@@ -1,4 +1,5 @@
 class PitchesController < ApplicationController
+  skip_before_action :require_login, only: [:public]
 
   def index
     @pitches = Pitch.all
@@ -46,6 +47,12 @@ class PitchesController < ApplicationController
   def choose_song
     @pitch = Pitch.find_by_id(params[:id])
     binding.pry
+  end
+
+  def public
+    @pitch = Pitch.find_by_id(params[:id])
+    @songs = @pitch.songs
+    render layout: false
   end
 
   protected

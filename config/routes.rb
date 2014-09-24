@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'song_select'
       post 'choose_song'
+      get 'public'
     end
   end
   resources :song_selections, only: [:new, :create]
