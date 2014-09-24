@@ -1,23 +1,27 @@
 .row
   .col-sm-2
   .col-sm-8
-    %h1= "#{@song.title} by #{@song.artist}"
+    %h1.text-center.margin
+      =@song.title
+      %em= "(#{@song.artist})"
     .row
       .col-sm-4.text-center
-        %th Genre
+        %th
+          %h4 Genre
       .col-sm-4.text-center
-        %th Description
+        %th
+          %h4 Description
       .col-sm-4.text-center
         %th
     .row
       .col-sm-4= @song.genre
       .col-sm-8= @song.description
-    .row
+    .row.song-controller
       .col-sm-12.text-center
         %audio{controls: "true"}
           %source{ src: "#{@song.audiofile}" }
   .col-sm-2
-.row
+.row.add-top-margin
   .col-sm-6
   .col-sm-2
     =button_to "Edit Song", edit_song_path(@song), method: :get, class: "btn btn-primary btn-block"
