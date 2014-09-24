@@ -9,8 +9,6 @@
           .body
             .form-group
               = f.input :pitch_to, label: false, input_html: { class: 'form-control', placeholder: "Pitch To", autofocus: "true" }
-            / .form-group
-            /   = f.input :title, label: false, input_html: { class: 'form-control', placeholder: "Song(s)"}
             .form-group
               = f.input :pitch_notes, label: false, input_html:  { class: 'form-control', placeholder: "Notes" }
             .form-group
@@ -20,7 +18,6 @@
             .form-group
               = f.input :message, label: false, input_html:  { class: 'form-control', placeholder: "Message" }
             .footer
-              = f.button :submit, "Send Pitch", class: "btn btn-block btn-primary"
+              = f.button :submit, "Next", class: "btn btn-block btn-primary"
         .margin.text-center
   .col-sm-2
-

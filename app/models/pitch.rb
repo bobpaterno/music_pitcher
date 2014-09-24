@@ -13,4 +13,7 @@ class Pitch < ActiveRecord::Base
   def populate_default_values
     self.listened_to = false
   end
+
+  accepts_nested_attributes_for :songs
+
 end
