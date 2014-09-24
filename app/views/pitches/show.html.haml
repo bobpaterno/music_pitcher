@@ -3,33 +3,33 @@
   .col-sm-8
     %h1= "Pitch ID: #{@pitch.id}"
     .row.text-center
-      .col-sm-4
+      .col-sm-3
         %th
           %h3 Pitched To
-      .col-sm-4
+      .col-sm-6
         %th
           %h3 Notes
-      .col-sm-4
+      .col-sm-3
         %th
           %h3 Listened To
     .row
-      .col-sm-4= @pitch.pitch_to
-      .col-sm-4= @pitch.pitch_notes
-      .col-sm-4= @pitch.listened_to ? "Yes" : "No"
+      .col-sm-3= @pitch.pitch_to
+      .col-sm-6= @pitch.pitch_notes
+      .col-sm-3.text-center= @pitch.listened_to ? "Yes" : "No"
     %br
-    .row.bg-email
+    .row.bg-email.add-some-padding
       .col-sm-12
         .row
-          .col-sm-2 Email:
+          .col-sm-2.text-right Email:
           .col-sm-10= " #{@pitch.email}"
-        .row
-          .col-sm-2 Subject:
+        .row.add-top-margin
+          .col-sm-2.text-right Subject:
           .col-sm-10= " #{@pitch.subject}"
-        .row
-          .col-sm-2 Message:
+        .row.add-top-margin
+          .col-sm-2.text-right Message:
           .col-sm-10= " #{@pitch.message}"
   .col-sm-2
-.row
+.row.add-top-margin
   .col-sm-6
   .col-sm-2
     =button_to "Back", pitches_path, method: "get", class: "btn btn-primary btn-block"
