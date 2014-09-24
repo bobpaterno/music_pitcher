@@ -32,26 +32,17 @@ feature "user adds new pitch" do
     expect(page.current_path).to eq song_select_pitch_path(Pitch.last)
   end
 
-  scenario "select one song" do
+  scenario "select one song and add successfully" do
     visit song_select_pitch_path(@pitch)
     select "Winners"
+    expect(SongSelection.count).to eq 0
     click_button "Add"
-    # expect(SongSelection.count).to eq 0
-    # click_button "Next"
-    # expect(SongSelection.count).to eq 1
-  end
-
-  scenario "add one song and save successfully" do
-    pending "implementation"
-    visit new_pitch_path
-    fill_in("Foo", with: "Win")
-    click "Winners"
-    click_button "Send Pitch"
+    expect(SongSelection.count).to eq 1
   end
 
   scenario "add multiple songs and save successfully" do
-    visit new_pitch_path
     pending "implementation"
+    visit new_pitch_path
     fail
     fill_in("Foo", with: "Win")
   end
