@@ -35,7 +35,7 @@ feature "pitch show page" do
     expect(page).to have_content("#{@pitch2.email}")
     expect(page).to have_content("#{@pitch2.subject}")
     expect(page).to have_content("#{@pitch2.message}")
-    expect(page).to have_content("#{@pitch2.listened_to}")
+    expect(page).to have_content("No") # view converts false to "No"
     click_button "Back"
     expect(page.current_path).to eq pitches_path
   end
