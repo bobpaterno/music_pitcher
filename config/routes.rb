@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get 'menu' => 'static_pages#menu'
   resource :user_session, only: [:new, :create, :destroy]
   resources :songs
-  resources :pitches, only: [:index, :new, :show, :destroy]
+  resources :pitches do
+    member do
+      get 'song_select'
+    end
+  end
+  # get 'song_select_pitch', controller: 'pitches'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

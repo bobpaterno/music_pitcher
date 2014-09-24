@@ -3,7 +3,8 @@ feature "user adds new pitch" do
     @user = Fabricate(:user)
     @song1= Fabricate(:song, title: "Winners")
     @song2= Fabricate(:song, title: "Windows")
-    @song3= Fabricate(:song, title: "Winding Roads")
+    @song3= Fabricate(:song, title: "Long Road")
+    @pitch= Fabricate(:pitch)
     login_as(@user)
   end
 
@@ -15,13 +16,28 @@ feature "user adds new pitch" do
     expect(page).to have_field("pitch[email]")
     expect(page).to have_field("pitch[subject]")
     expect(page).to have_field("pitch[message]")
-    expect(page).to have_button("Send Pitch")
+    expect(page).to have_button("Next")
   end
 
-  scenario "songs autocomplete works" do
-    pending "implementation"
+  scenario "next creates new pitch and goes to select song page (step 2)" do
     visit new_pitch_path
-    fill_in()
+    fill_in "Pitch to", with: "Ed Biglesworth"
+    fill_in "Pitch notes", with: "Ed asked for a great song"
+    fill_in "Email", with: "ed@songms.com"
+    fill_in "Subject", with: "Here's the song you wanted"
+    fill_in "Message", with: "Ed,\nHope you are doing well.  Check this song out.\n-Dr. Evil"
+    expect(Pitch.count).to eq 1  # already created one in background
+    click_button "Next"
+    expect(Pitch.count).to eq 2
+    expect(page.current_path).to eq song_select_pitch_path(Pitch.last)
+  end
+
+  scenario "select one song" do
+    visit song_select_pitch_path(@pitch)
+    select "Winners"
+    expect(SongSelection.count).to eq 0
+    click_button "Next"
+    expect(SongSelection.count).to eq 1
   end
 
   scenario "add one song and save successfully" do
