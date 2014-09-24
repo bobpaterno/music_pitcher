@@ -3,13 +3,18 @@
   .col-sm-8
     .box.bg-bluegray
       %h3.text-center
-        New Pitch
+        Select Song
       .box-body
-        = simple_form_for @songs do |f|
-          .body
-            .form-group
-              = f.input :title, input_html: { class: 'form-control', placeholder: "Pitch To", autofocus: "true" }
-            .footer
-              = f.button :submit, "Next", class: "btn btn-block btn-primary"
-        .margin.text-center
+        = simple_form_for @pitch do |f|
+          #song-dropdowns
+            %select{:class => "title_dropdown", :id => "song_select_1" }
+              %option Titles
+              - @songs.each do |song|
+                %option{:value => "#{song.id}"}= song.title
+            / make this add button do an ajax call to create the SongSelection for this song
+            / while the Next button below will show the pitch
+            %button{:type => "submit", :class => "btn btn-primary btn-sm"} Add
+          .footer.text-right
+            = f.button :submit, "Next", class: "btn btn-primary"
+      .margin.text-center
   .col-sm-2
