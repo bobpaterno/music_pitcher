@@ -1,8 +1,26 @@
-%h1 Songs Show Page
-%p= @song.title
-%p= @song.artist
-%p= @song.genre
-%p= @song.description
-
-= button_to("Edit Song", edit_song_path(@song), method: :get)
-= button_to("Delete Song", song_path(@song), method: :delete)
+.row
+  .col-sm-2
+  .col-sm-8
+    %h1= "#{@song.title} by #{@song.artist}"
+    .row
+      .col-sm-4.text-center
+        %th Genre
+      .col-sm-4.text-center
+        %th Description
+      .col-sm-4.text-center
+        %th
+    .row
+      .col-sm-4= @song.genre
+      .col-sm-8= @song.description
+    .row
+      .col-sm-12.text-center
+        %audio{controls: "true"}
+          %source{ src: "#{@song.audiofile}" }
+  .col-sm-2
+.row
+  .col-sm-6
+  .col-sm-2
+    =button_to "Edit Song", edit_song_path(@song), method: :get, class: "btn btn-primary btn-block"
+  .col-sm-2
+    =button_to "Delete Song", song_path(@song), method: :delete, class: "btn btn-danger btn-block"
+  .col-sm-2
