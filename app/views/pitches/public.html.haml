@@ -26,7 +26,7 @@
               %tbody
                 - @songs.each do |song|
                   %tr
-                    %td= link_to "#{song.title}", song_path(song)
+                    %td= song.title
                     %td= song.artist
                     %td= song.genre
                     %td
