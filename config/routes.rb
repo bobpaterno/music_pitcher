@@ -13,8 +13,8 @@ Rails.application.routes.draw do
       post 'choose_song'
       get 'public'
     end
+      resources :song_selections, only: [:new, :create]
   end
-  resources :song_selections, only: [:new, :create]
   # get 'song_select_pitch', controller: 'pitches'
 
   # Example of regular route:

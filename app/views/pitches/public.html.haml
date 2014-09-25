@@ -13,10 +13,10 @@
     .row
       .col-sm-2
       .col-sm-8
-        %h1 Please Listen
+        %h1 Thanks for listening
         .row
           .col-sm-12.table-responsive
-            %table.table.table-striped
+            %table.table
               Song List
               %thead
                 %th Title
@@ -32,6 +32,7 @@
                     %td
                       %audio{controls: "true"}
                         %source{ src: "#{song.audiofile}" }
-      .col-sm-2  %footer
+      .col-sm-2  
+  %footer
   = javascript_include_tag "application"
   = javascript_tag '$.fx.off = true;' if Rails.env.test?

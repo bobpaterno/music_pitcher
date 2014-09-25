@@ -5,9 +5,8 @@
       %h3.text-center
         Select Song
       .box-body
-        = simple_form_for @song_selection do |f|
-          = f.hidden_field :pitch, :value => @pitch.id
-          = f.select(:song, @songs.collect{ |song| [song.title, song.id] } )
+        = simple_form_for @song_selection, url: pitch_song_selections_path(@pitch) do |f|
+          = f.select(:song_id, @songs.collect{ |song| [song.title, song.id] } )
           = f.button :submit, "Add", :class => "btn btn-primary btn-sm"
           #song-list.margin
       .margin.text-center

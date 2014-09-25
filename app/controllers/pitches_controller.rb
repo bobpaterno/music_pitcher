@@ -12,7 +12,7 @@ class PitchesController < ApplicationController
   def create
     @pitch = Pitch.new(pitch_params)
     if @pitch.save
-      redirect_to song_select_pitch_path(@pitch)
+      redirect_to new_pitch_song_selection_path(@pitch)
     else
       flash.now[:alert] = "You must fill in all fields"
       render :new
@@ -34,16 +34,6 @@ class PitchesController < ApplicationController
     redirect_to pitches_path
   end
 
-  def song_select
-    @pitch = Pitch.find_by_id(params[:id])
-    @songs = Song.all
-    @song_selection = SongSelection.new
-    if @pitch.nil?
-      flash.notice = "Sorry, there seems to be a problem, please re-enter your pitch"
-      render :new
-    end
-  end
-
   def choose_song
     @pitch = Pitch.find_by_id(params[:id])
     binding.pry
@@ -51,8 +41,13 @@ class PitchesController < ApplicationController
 
   def public
     @pitch = Pitch.find_by_id(params[:id])
-    @songs = @pitch.songs
-    render layout: false
+    if @pitch.nil? || @songs.nil?
+      flash.notice = "Sorry, this pitch is not available"
+      redirect_to root_path
+    else
+      @songs = @pitch.songs
+      render layout: false
+    end
   end
 
   protected
