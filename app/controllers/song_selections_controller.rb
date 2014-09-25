@@ -9,6 +9,7 @@ class SongSelectionsController < ApplicationController
     @pitch = Pitch.find_by_id(params[:pitch_id])
     @song = Song.find_by_id(params[:song_selection][:song_id])
     SongSelection.create(pitch: @pitch, song: @song)
+    mail_pitch(@pitch)
     redirect_to pitch_path(@pitch)
   end
 end
