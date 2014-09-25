@@ -41,7 +41,7 @@ class PitchesController < ApplicationController
 
   def public
     @pitch = Pitch.find_by_id(params[:id])
-    if @pitch.nil? || @songs.nil?
+    if @pitch.nil?
       flash.notice = "Sorry, this pitch is not available"
       redirect_to root_path
     else
