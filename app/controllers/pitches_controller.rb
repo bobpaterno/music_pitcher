@@ -46,6 +46,10 @@ class PitchesController < ApplicationController
       redirect_to root_path
     else
       @songs = @pitch.songs
+      if current_user.nil?
+        @pitch.listened_to = true
+        @pitch.save
+      end
       render layout: false
     end
   end
