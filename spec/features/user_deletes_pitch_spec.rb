@@ -25,8 +25,7 @@ feature "user deletes pitch" do
     login_as(@user)
     visit pitches_path
     expect(Pitch.count).to eq 2
-    first("td a[text='Details']").click  #click_on "Details"
-    click_button "Delete"
+    first(".pitch-delete a").click
     expect(Pitch.count).to eq 1
   end
 

@@ -12,6 +12,7 @@
 # * User must be logged in
 # * User sees pitch id, pitch_to, pitch_notes, email, subject, message, created_at, and listened_to fields
 # * User sees link to delete pitch
+require 'pry'
 
 feature "pitch show page" do
   background do
@@ -29,7 +30,7 @@ feature "pitch show page" do
     @pitch2 = Fabricate(:pitch, pitch_notes: "These are pitch notes")
     login_as(@user)
     visit pitches_path
-    click_on "Pitch ID: #{@pitch2.id}"
+    all(".pitch-details a")[1].click
     expect(page).to have_content("#{@pitch2.pitch_to}")
     expect(page).to have_content("These are pitch notes")
     expect(page).to have_content("#{@pitch2.email}")
@@ -45,7 +46,7 @@ feature "pitch show page" do
     @pitch2 = Fabricate(:pitch, pitch_notes: "These are pitch notes")
     login_as(@user)
     visit pitches_path
-    click_on "Pitch ID: #{@pitch2.id}"
+    all(".pitch-details a")[1].click
     expect(page.has_button?("Delete")).to eq true
   end
 
